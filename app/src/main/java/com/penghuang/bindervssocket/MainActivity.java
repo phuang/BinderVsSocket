@@ -20,9 +20,11 @@ public class MainActivity extends Activity {
         System.loadLibrary("MyLib");
     }
 
-    private native double socketTest();
+    private static native double socketTest();
 
-    private native double binderTest();
+    private static native double binderTest();
+
+    public static native double binderTestStartServer();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,15 +36,12 @@ public class MainActivity extends Activity {
     @Override
     protected void onStart() {
         super.onStart();
-        // double result = socketTest();
         Intent i = new Intent();
         i.setComponent(new ComponentName("com.penghuang.bindervssocket", "com.penghuang.bindervssocket.EchoService"));
-        this.bindService(i,
-                         mConnection, Context.BIND_AUTO_CREATE);
-        TextView tv;
-
+        this.bindService(i, mConnection, Context.BIND_AUTO_CREATE);
 
         if (true) {
+            TextView tv;
             tv = (TextView) findViewById(R.id.textView_socket);
             tv.setText("socket = " + socketTest());
 

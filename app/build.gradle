@@ -13,6 +13,9 @@ android {
 
         ndk {
             moduleName "MyLib"
+            abiFilter "armeabi"
+            // cFlags " -DHAVE_SYS_UIO_H"
+            ldLibs "binder", "utils", "log"
         }
     }
     buildTypes {

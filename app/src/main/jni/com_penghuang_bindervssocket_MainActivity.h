@@ -63,7 +63,7 @@ extern "C" {
  * Signature: ()D
  */
 JNIEXPORT jdouble JNICALL Java_com_penghuang_bindervssocket_MainActivity_socketTest
-  (JNIEnv *, jobject);
+  (JNIEnv *, jclass);
 
 /*
  * Class:     com_penghuang_bindervssocket_MainActivity
@@ -71,7 +71,15 @@ JNIEXPORT jdouble JNICALL Java_com_penghuang_bindervssocket_MainActivity_socketT
  * Signature: ()D
  */
 JNIEXPORT jdouble JNICALL Java_com_penghuang_bindervssocket_MainActivity_binderTest
-  (JNIEnv *, jobject);
+  (JNIEnv *, jclass);
+
+/*
+ * Class:     com_penghuang_bindervssocket_MainActivity
+ * Method:    binderTestStartServer
+ * Signature: ()D
+ */
+JNIEXPORT jdouble JNICALL Java_com_penghuang_bindervssocket_MainActivity_binderTestStartServer
+  (JNIEnv *, jclass);
 
 #ifdef __cplusplus
 }
